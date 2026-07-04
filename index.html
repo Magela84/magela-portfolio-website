@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Magela Bobby Akinola — Azure Cloud Engineer</title>
+<meta name="description" content="Mid-level Azure Cloud Engineer specializing in networking & infrastructure, DevOps & CI/CD, Kubernetes/containers, and data & storage solutions. Open to remote & top-tier roles." />
+<meta name="theme-color" content="#0b0f17" />
+
+<!-- Favicon: inline azure-blue cloud, no file needed -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0f17'/%3E%3Cpath d='M11 22h11a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 10.5 14 4 4 0 0 0 11 22z' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linejoin='round'/%3E%3Ccircle cx='16' cy='16' r='1.6' fill='%2338bdf8'/%3E%3C/svg%3E" />
+
+<!-- Open Graph / social share -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Magela Bobby Akinola — Azure Cloud Engineer" />
+<meta property="og:description" content="Networking & infrastructure · DevOps & CI/CD · Kubernetes/containers · Data & storage. Building resilient Azure infrastructure. Open to remote & top-tier roles." />
+<meta property="og:image" content="https://placehold.co/1200x630/0b0f17/38bdf8/png?text=Magela%20Bobby%20Akinola%20%C2%B7%20Azure%20Cloud%20Engineer" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Magela Bobby Akinola — Azure Cloud Engineer" />
+<meta name="twitter:description" content="Networking · DevOps · Kubernetes · Data & Storage. Resilient Azure infrastructure, automation-first." />
+<meta name="twitter:image" content="https://placehold.co/1200x630/0b0f17/38bdf8/png?text=Magela%20Bobby%20Akinola%20%C2%B7%20Azure%20Cloud%20Engineer" />
+<style>
+  :root {
+    --bg: #0b0f17;
+    --bg-elev: #111827;
+    --bg-card: #131a27;
+    --border: #1f2937;
+    --text: #e6edf6;
+    --text-dim: #9aa7b8;
+    --text-faint: #6b7889;
+    --accent: #38bdf8;      /* azure blue */
+    --accent-2: #7c9cff;
+    --accent-glow: rgba(56, 189, 248, 0.15);
+    --ok: #34d399;
+    --radius: 14px;
+    --maxw: 1080px;
+    --shadow: 0 10px 40px -12px rgba(0,0,0,0.6);
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: "SF Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+    --nav-bg: rgba(11, 15, 23, 0.72);
+  }
+
+  :root[data-theme="light"] {
+    --bg: #f6f8fc;
+    --bg-elev: #ffffff;
+    --bg-card: #ffffff;
+    --border: #e2e8f2;
+    --text: #0f1a2b;
+    --text-dim: #47566b;
+    --text-faint: #7a8798;
+    --accent: #0a84c9;
+    --accent-2: #4f6bd8;
+    --accent-glow: rgba(10, 132, 201, 0.12);
+    --ok: #059669;
+    --shadow: 0 10px 40px -12px rgba(15,26,43,0.18);
+    --nav-bg: rgba(246, 248, 252, 0.78);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; }
+
+  ::selection { background: var(--accent-glow); color: #fff; }
+
+  /* ---------- Layout helpers ---------- */
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  section { padding: 96px 0; position: relative; }
+  section:nth-of-type(even) { background: var(--bg-elev); }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: inline-block;
+  }
+
+  .section-title {
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+    font-weight: 750;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+
+  .section-lead {
+    color: var(--text-dim);
+    max-width: 640px;
+    margin-bottom: 48px;
+    font-size: 1.05rem;
+  }
+
+  /* ---------- Nav ---------- */
+  header.nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--nav-bg);
+    backdrop-filter: saturate(150%) blur(12px);
+    -webkit-backdrop-filter: saturate(150%) blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease, background 0.3s ease;
+  }
+  header.nav.scrolled { border-bottom-color: var(--border); }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 66px;
+  }
+
+  .brand {
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .brand .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px 2px var(--accent-glow);
+  }
+
+  .nav-links { display: flex; gap: 6px; align-items: center; }
+  .nav-links a {
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: color 0.2s, background 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); background: var(--bg-card); }
+  .nav-links a.cta {
+    color: var(--bg);
+    background: var(--accent);
+    font-weight: 600;
+  }
+  .nav-links a.cta:hover { background: #5cc9fa; color: var(--bg); }
+
+  .nav-toggle {
+    display: none;
+    background: none; border: 1px solid var(--border);
+    color: var(--text); border-radius: 8px;
+    width: 40px; height: 38px; cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+  .theme-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 8px;
+    width: 38px; height: 38px;
+    display: grid; place-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: border-color 0.2s, color 0.2s;
+    flex: 0 0 auto;
+  }
+  .theme-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .nav-right { display: flex; align-items: center; gap: 10px; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 120px 0 100px;
+    background:
+      radial-gradient(circle at 20% 10%, var(--accent-glow), transparent 45%),
+      radial-gradient(circle at 85% 20%, rgba(124,156,255,0.10), transparent 40%);
+  }
+  .hero-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 28px;
+  }
+  .hero-status .pulse {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--ok);
+    box-shadow: 0 0 0 0 rgba(52,211,153,0.6);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(52,211,153,0.5); }
+    70% { box-shadow: 0 0 0 8px rgba(52,211,153,0); }
+    100% { box-shadow: 0 0 0 0 rgba(52,211,153,0); }
+  }
+
+  .hero h1 {
+    font-size: clamp(2.3rem, 6vw, 4.1rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+    margin-bottom: 22px;
+    max-width: 900px;
+  }
+  .hero h1 .grad {
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero p.sub {
+    font-size: 1.2rem;
+    color: var(--text-dim);
+    max-width: 640px;
+    margin-bottom: 36px;
+  }
+
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.98rem;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.2s, border-color 0.2s;
+    border: 1px solid transparent;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--accent); color: var(--bg); }
+  .btn-primary:hover { background: #5cc9fa; }
+  .btn-ghost { border-color: var(--border); color: var(--text); background: var(--bg-card); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+  }
+  .hero-stats .stat .num {
+    font-size: 1.9rem;
+    font-weight: 750;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+  .hero-stats .stat .lbl {
+    font-size: 0.85rem;
+    color: var(--text-faint);
+    font-family: var(--mono);
+  }
+
+  /* Hero layout with profile photo */
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.9fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .hero-name {
+    font-size: 1.15rem;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+  }
+  .hero-name strong {
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .hero-photo { display: flex; justify-content: center; }
+  .avatar {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    max-width: 72vw;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    box-shadow: 0 0 0 8px var(--accent-glow), var(--shadow);
+    overflow: hidden;
+  }
+  .avatar .initials {
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--bg);
+    letter-spacing: -0.03em;
+    user-select: none;
+  }
+  .avatar img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .avatar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    box-shadow: inset 0 0 60px rgba(11,15,23,0.25);
+  }
+
+  /* ---------- About ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .about-grid p { color: var(--text-dim); margin-bottom: 18px; font-size: 1.05rem; }
+  .about-grid p strong { color: var(--text); font-weight: 600; }
+
+  .focus-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 26px;
+  }
+  .focus-card h3 {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-faint);
+    margin-bottom: 18px;
+    font-family: var(--mono);
+  }
+  .focus-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .focus-list li { display: flex; gap: 12px; align-items: flex-start; }
+  .focus-list .ic {
+    flex: 0 0 auto;
+    width: 34px; height: 34px;
+    border-radius: 9px;
+    display: grid; place-items: center;
+    background: var(--accent-glow);
+    color: var(--accent);
+    font-size: 1.05rem;
+  }
+  .focus-list .txt strong { display: block; font-size: 0.98rem; color: var(--text); }
+  .focus-list .txt span { font-size: 0.86rem; color: var(--text-faint); }
+
+  /* ---------- Projects ---------- */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 26px;
+  }
+  .project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow);
+  }
+
+  /* architecture diagram placeholder */
+  .diagram {
+    height: 172px;
+    background:
+      linear-gradient(135deg, #0e1522, #16203300),
+      repeating-linear-gradient(0deg, transparent 0 23px, rgba(56,189,248,0.05) 23px 24px),
+      repeating-linear-gradient(90deg, transparent 0 23px, rgba(56,189,248,0.05) 23px 24px);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+  .diagram svg { opacity: 0.9; }
+  .diagram .tag {
+    position: absolute;
+    top: 12px; left: 12px;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: var(--text-faint);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .project-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
+  .project-body h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+  .project-body p.desc { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 18px; flex: 1; }
+
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .badge {
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+  }
+
+  .project-links { display: flex; gap: 16px; align-items: center; }
+  .project-links a {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+  }
+  .project-links a:hover { color: var(--accent); }
+
+  /* ---------- Skills ---------- */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+  }
+  .skill-cat {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+  }
+  .skill-cat .head {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 18px;
+  }
+  .skill-cat .head .ic {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: grid; place-items: center;
+    background: var(--accent-glow); color: var(--accent);
+    font-size: 1.15rem;
+  }
+  .skill-cat .head h3 { font-size: 1.02rem; font-weight: 650; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-tags span {
+    font-size: 0.82rem;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .skill-tags span:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ---------- Certifications ---------- */
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  .cert-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .cert-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .cert-badge {
+    flex: 0 0 auto;
+    width: 54px; height: 54px;
+    border-radius: 12px;
+    display: grid; place-items: center;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: var(--bg);
+    font-weight: 800;
+    font-family: var(--mono);
+    font-size: 0.9rem;
+  }
+  .cert-card .info h3 { font-size: 1rem; font-weight: 650; margin-bottom: 2px; }
+  .cert-card .info p { font-size: 0.84rem; color: var(--text-faint); }
+  .cert-card .info .status {
+    display: inline-block;
+    margin-top: 6px;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--ok);
+  }
+  .cert-card.pending .cert-badge { background: var(--bg-elev); color: var(--text-faint); border: 1px dashed var(--border); }
+  .cert-card.pending .info .status { color: var(--text-faint); }
+
+  /* ---------- Contact ---------- */
+  .contact-wrap { text-align: center; max-width: 620px; margin: 0 auto; }
+  .contact-wrap .section-lead { margin: 0 auto 36px; }
+  .contact-methods {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .contact-methods a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text);
+    font-size: 0.95rem;
+    transition: border-color 0.2s, transform 0.15s, color 0.2s;
+  }
+  .contact-methods a:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+  .contact-form {
+    text-align: left;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    display: grid;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field label {
+    font-size: 0.8rem;
+    font-family: var(--mono);
+    color: var(--text-faint);
+    letter-spacing: 0.04em;
+  }
+  .field input,
+  .field textarea {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 12px 14px;
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 0.95rem;
+    resize: vertical;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .field input:focus,
+  .field textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+  }
+  .field textarea { min-height: 130px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .contact-form .btn { justify-content: center; }
+  .form-status {
+    font-size: 0.9rem;
+    font-family: var(--mono);
+    min-height: 1.2em;
+    text-align: center;
+  }
+  .form-status.ok { color: var(--ok); }
+  .form-status.err { color: #f87171; }
+  @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+
+  /* ---------- Footer ---------- */
+  footer.foot {
+    border-top: 1px solid var(--border);
+    padding: 32px 0;
+    text-align: center;
+    color: var(--text-faint);
+    font-size: 0.85rem;
+    background: var(--bg);
+  }
+  footer.foot .mono { font-family: var(--mono); }
+
+  /* ---------- Reveal animation ---------- */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 820px) {
+    .about-grid { grid-template-columns: 1fr; gap: 32px; }
+    .nav-links {
+      position: fixed;
+      top: 66px; right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      background: var(--bg-elev);
+      border-left: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 12px;
+      width: 220px;
+      gap: 4px;
+      transform: translateX(110%);
+      transition: transform 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+    .nav-links.open { transform: translateX(0); }
+    .nav-links a { padding: 12px; }
+    .nav-toggle { display: block; }
+    section { padding: 72px 0; }
+    .hero { padding: 80px 0 70px; }
+    .hero-stats { gap: 28px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+    .hero-photo { order: -1; }
+    .avatar { width: 200px; height: 200px; }
+    .avatar .initials { font-size: 3.4rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand"><span class="dot"></span>Magela Bobby Akinola</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#certs">Certifications</a>
+      <a href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+      <a href="#contact" class="cta">Get in touch</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle light/dark theme">🌙</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-content">
+      <div class="hero-status reveal">
+        <span class="pulse"></span> Available for remote &amp; top-tier cloud roles
+      </div>
+      <p class="hero-name reveal">Hi, I'm <strong>Magela Bobby Akinola</strong></p>
+      <h1 class="reveal">
+        I build <span class="grad">resilient Azure infrastructure</span> that ships fast and scales without drama.
+      </h1>
+      <p class="sub reveal">
+        Mid-level Azure Cloud Engineer focused on networking &amp; infrastructure, DevOps &amp; CI/CD,
+        Kubernetes, and data &amp; storage. I turn cloud complexity into repeatable, automated systems.
+      </p>
+      <div class="hero-cta reveal">
+        <a href="#projects" class="btn btn-primary">View projects →</a>
+        <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost">⤓ View résumé</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat"><div class="num">3+</div><div class="lbl">years in Azure</div></div>
+        <div class="stat"><div class="num">99.9%</div><div class="lbl">uptime targets</div></div>
+        <div class="stat"><div class="num">100%</div><div class="lbl">IaC-managed</div></div>
+      </div>
+    </div>
+    <div class="hero-photo reveal">
+      <!-- Drop a file named profile.jpg in this folder to replace the initials -->
+      <div class="avatar">
+        <span class="initials">MBA</span>
+        <img src="profile.jpg" alt="Magela Bobby Akinola" onerror="this.style.display='none'" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <span class="eyebrow reveal">// about</span>
+    <h2 class="section-title reveal">Cloud engineering with an automation-first mindset</h2>
+    <div class="about-grid">
+      <div class="reveal">
+        <p>
+          I'm an Azure Cloud Engineer with <strong>2–4 years of hands-on experience</strong> designing,
+          deploying, and operating cloud infrastructure. My work sits at the intersection of
+          <strong>reliable networking</strong>, <strong>automated delivery pipelines</strong>, and
+          <strong>container platforms</strong> — the plumbing that lets product teams move fast.
+        </p>
+        <p>
+          I treat infrastructure as code by default, obsess over observability and cost, and enjoy
+          untangling the hard problems: hub-and-spoke network topologies, zero-downtime deployments,
+          and storage that stays fast and durable under load.
+        </p>
+        <p>
+          I'm currently targeting <strong>remote and top-tier engineering roles</strong> where I can
+          own infrastructure end to end and keep leveling up toward architect-level work.
+        </p>
+      </div>
+      <div class="focus-card reveal">
+        <h3>Core focus areas</h3>
+        <ul class="focus-list">
+          <li>
+            <span class="ic">🌐</span>
+            <span class="txt"><strong>Networking &amp; Infrastructure</strong><span>VNets, hub-spoke, firewalls, private endpoints</span></span>
+          </li>
+          <li>
+            <span class="ic">⚙️</span>
+            <span class="txt"><strong>DevOps &amp; CI/CD</strong><span>Pipelines, GitOps, release automation</span></span>
+          </li>
+          <li>
+            <span class="ic">☸️</span>
+            <span class="txt"><strong>Kubernetes &amp; Containers</strong><span>AKS, Helm, scaling &amp; self-healing</span></span>
+          </li>
+          <li>
+            <span class="ic">🗄️</span>
+            <span class="txt"><strong>Data &amp; Storage</strong><span>Blob, SQL, Cosmos DB, backup &amp; DR</span></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <div class="wrap">
+    <span class="eyebrow reveal">// projects</span>
+    <h2 class="section-title reveal">Selected Azure builds</h2>
+    <p class="section-lead reveal">
+      A sample of infrastructure I've designed and automated. Architecture diagrams and repos are
+      placeholders — swap in your own screenshots and links.
+    </p>
+
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <article class="project-card reveal">
+        <div class="diagram">
+          <span class="tag">architecture diagram</span>
+          <svg width="220" height="110" viewBox="0 0 220 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="42" width="46" height="26" rx="5" stroke="#38bdf8" stroke-width="1.4" fill="#0e1522"/>
+            <rect x="88" y="10" width="46" height="26" rx="5" stroke="#7c9cff" stroke-width="1.4" fill="#0e1522"/>
+            <rect x="88" y="74" width="46" height="26" rx="5" stroke="#7c9cff" stroke-width="1.4" fill="#0e1522"/>
+            <rect x="166" y="42" width="46" height="26" rx="5" stroke="#34d399" stroke-width="1.4" fill="#0e1522"/>
+            <path d="M54 55 L88 23 M54 55 L88 87 M134 23 L166 55 M134 87 L166 55" stroke="#3a4a63" stroke-width="1.3"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <h3>Hub-and-Spoke Landing Zone</h3>
+          <p class="desc">
+            Enterprise-scale network topology with centralized Azure Firewall, private DNS, and
+            segmented spoke VNets — fully provisioned via Terraform with policy guardrails.
+          </p>
+          <div class="badges">
+            <span class="badge">Azure VNet</span>
+            <span class="badge">Azure Firewall</span>
+            <span class="badge">Terraform</span>
+            <span class="badge">Private DNS</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Magela84" target="_blank" rel="noopener">⌥ GitHub</a>
+            <a href="#" target="_blank" rel="noopener">↗ Case study</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project-card reveal">
+        <div class="diagram">
+          <span class="tag">architecture diagram</span>
+          <svg width="220" height="110" viewBox="0 0 220 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="44" width="44" height="24" rx="5" stroke="#38bdf8" stroke-width="1.4" fill="#0e1522"/>
+            <rect x="88" y="44" width="44" height="24" rx="5" stroke="#7c9cff" stroke-width="1.4" fill="#0e1522"/>
+            <rect x="166" y="20" width="44" height="24" rx="5" stroke="#34d399" stroke-width="1.4" fill="#0e1522"/>
+            <rect x="166" y="68" width="44" height="24" rx="5" stroke="#34d399" stroke-width="1.4" fill="#0e1522"/>
+            <path d="M54 56 L88 56 M132 56 L166 32 M132 56 L166 80" stroke="#3a4a63" stroke-width="1.3"/>
+            <circle cx="110" cy="18" r="4" fill="#38bdf8"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <h3>GitOps CI/CD Platform for AKS</h3>
+          <p class="desc">
+            End-to-end pipeline: Azure DevOps builds container images, pushes to ACR, and Argo CD
+            syncs to AKS. Blue-green rollouts with automated rollback and Slack notifications.
+          </p>
+          <div class="badges">
+            <span class="badge">AKS</span>
+            <span class="badge">Azure DevOps</span>
+            <span class="badge">Argo CD</span>
+            <span class="badge">Helm</span>
+            <span class="badge">ACR</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Magela84" target="_blank" rel="noopener">⌥ GitHub</a>
+            <a href="#" target="_blank" rel="noopener">↗ Case study</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project-card reveal">
+        <div class="diagram">
+          <span class="tag">architecture diagram</span>
+          <svg width="220" height="110" viewBox="0 0 220 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="12" y="42" width="42" height="26" rx="5" stroke="#38bdf8" stroke-width="1.4" fill="#0e1522"/>
+            <rect x="90" y="12" width="42" height="26" rx="5" stroke="#7c9cff" stroke-width="1.4" fill="#0e1522"/>
+            <rect x="90" y="72" width="42" height="26" rx="5" stroke="#7c9cff" stroke-width="1.4" fill="#0e1522"/>
+            <path d="M132 25 L168 25 L168 85 L132 85" stroke="#34d399" stroke-width="1.4" fill="none"/>
+            <path d="M54 55 L90 25 M54 55 L90 85" stroke="#3a4a63" stroke-width="1.3"/>
+            <rect x="168" y="44" width="40" height="22" rx="5" stroke="#34d399" stroke-width="1.4" fill="#0e1522"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <h3>Resilient Data &amp; Backup Platform</h3>
+          <p class="desc">
+            Multi-region data layer combining Blob Storage, Azure SQL, and Cosmos DB with
+            geo-replication, lifecycle policies, and automated cross-region backup/DR runbooks.
+          </p>
+          <div class="badges">
+            <span class="badge">Blob Storage</span>
+            <span class="badge">Azure SQL</span>
+            <span class="badge">Cosmos DB</span>
+            <span class="badge">Bicep</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Magela84" target="_blank" rel="noopener">⌥ GitHub</a>
+            <a href="#" target="_blank" rel="noopener">↗ Case study</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills">
+  <div class="wrap">
+    <span class="eyebrow reveal">// skills</span>
+    <h2 class="section-title reveal">Tools &amp; technologies</h2>
+    <p class="section-lead reveal">The stack I reach for, organized by how I actually use it day to day.</p>
+
+    <div class="skills-grid">
+      <div class="skill-cat reveal">
+        <div class="head"><span class="ic">☁️</span><h3>Azure Services</h3></div>
+        <div class="skill-tags">
+          <span>Virtual Network</span><span>Azure Firewall</span><span>Load Balancer</span>
+          <span>Application Gateway</span><span>AKS</span><span>App Service</span>
+          <span>Azure SQL</span><span>Cosmos DB</span><span>Blob Storage</span>
+          <span>Key Vault</span><span>Monitor</span><span>Entra ID</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal">
+        <div class="head"><span class="ic">📐</span><h3>Infrastructure as Code</h3></div>
+        <div class="skill-tags">
+          <span>Terraform</span><span>Bicep</span><span>ARM Templates</span>
+          <span>Ansible</span><span>Azure Policy</span><span>PowerShell</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal">
+        <div class="head"><span class="ic">⚙️</span><h3>DevOps Tools</h3></div>
+        <div class="skill-tags">
+          <span>Azure DevOps</span><span>GitHub Actions</span><span>Argo CD</span>
+          <span>Git</span><span>Jenkins</span><span>Prometheus</span>
+          <span>Grafana</span><span>Azure Monitor</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal">
+        <div class="head"><span class="ic">☸️</span><h3>Containers</h3></div>
+        <div class="skill-tags">
+          <span>Kubernetes</span><span>Docker</span><span>Helm</span>
+          <span>AKS</span><span>ACR</span><span>Kustomize</span>
+          <span>Istio</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CERTIFICATIONS ============ -->
+<section id="certs">
+  <div class="wrap">
+    <span class="eyebrow reveal">// certifications</span>
+    <h2 class="section-title reveal">Certifications</h2>
+    <p class="section-lead reveal">Microsoft-validated skills, with more on the roadmap.</p>
+
+    <div class="cert-grid">
+      <div class="cert-card reveal">
+        <div class="cert-badge">AZ<br>104</div>
+        <div class="info">
+          <h3>Azure Administrator</h3>
+          <p>Microsoft Certified · AZ-104</p>
+          <span class="status">● Certified</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal">
+        <div class="cert-badge">AZ<br>400</div>
+        <div class="info">
+          <h3>DevOps Engineer Expert</h3>
+          <p>Microsoft Certified · AZ-400</p>
+          <span class="status">● Certified</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal">
+        <div class="cert-badge">AZ<br>900</div>
+        <div class="info">
+          <h3>Azure Fundamentals</h3>
+          <p>Microsoft Certified · AZ-900</p>
+          <span class="status">● Certified</span>
+        </div>
+      </div>
+
+      <div class="cert-card pending reveal">
+        <div class="cert-badge">AZ<br>305</div>
+        <div class="info">
+          <h3>Solutions Architect Expert</h3>
+          <p>Microsoft · AZ-305</p>
+          <span class="status">◐ In progress</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="wrap contact-wrap">
+    <span class="eyebrow reveal">// contact</span>
+    <h2 class="section-title reveal">Let's build something reliable</h2>
+    <p class="section-lead reveal">
+      Open to remote and top-tier cloud engineering roles. Have an infrastructure challenge or a
+      team that needs a hand? I'd love to hear about it.
+    </p>
+    <!-- Formspree: replace YOUR_FORM_ID with the ID from your Formspree dashboard -->
+    <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-row">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+        </div>
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell me about the role or challenge…" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send message →</button>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="contact-methods reveal">
+      <a href="mailto:m.akinola04z@gmail.com">✉️ m.akinola04z@gmail.com</a>
+      <a href="https://www.linkedin.com/in/magela-akinola/" target="_blank" rel="noopener">in LinkedIn</a>
+      <a href="https://github.com/Magela84" target="_blank" rel="noopener">⌥ GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <p>Designed &amp; built by Magela Bobby Akinola · <span class="mono">Azure Cloud Engineer</span></p>
+    <p style="margin-top:6px;opacity:0.6;">© <span id="year"></span> · Deployed with intent.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => links.classList.remove('open'))
+  );
+
+  // Nav border on scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Reveal-on-scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (i % 6) * 60 + 'ms';
+    io.observe(el);
+  });
+
+  // Theme toggle (persisted)
+  const themeBtn = document.getElementById('themeBtn');
+  const root = document.documentElement;
+  const setTheme = (t) => {
+    root.setAttribute('data-theme', t);
+    themeBtn.textContent = t === 'light' ? '☀️' : '🌙';
+    localStorage.setItem('theme', t);
+  };
+  const saved = localStorage.getItem('theme');
+  setTheme(saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));
+  themeBtn.addEventListener('click', () =>
+    setTheme(root.getAttribute('data-theme') === 'light' ? 'dark' : 'light')
+  );
+
+  // Contact form → Formspree (async, no page redirect)
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (form.action.includes('YOUR_FORM_ID')) {
+      status.className = 'form-status err';
+      status.textContent = 'Form not configured yet — add your Formspree ID.';
+      return;
+    }
+    status.className = 'form-status';
+    status.textContent = 'Sending…';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+      if (res.ok) {
+        form.reset();
+        status.className = 'form-status ok';
+        status.textContent = 'Thanks! Your message is on its way.';
+      } else {
+        throw new Error('Request failed');
+      }
+    } catch {
+      status.className = 'form-status err';
+      status.textContent = 'Something went wrong — email me directly instead.';
+    }
+  });
+
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+# Editor / OS
+.DS_Store
+Thumbs.db
+
+# Local preview tooling (session-specific)
+.claude/
