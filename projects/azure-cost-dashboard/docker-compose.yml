@@ -1,0 +1,25 @@
+# Runs the backend (API) and frontend (nginx-served SPA) as two services.
+#
+# Create backend/.env first (copy backend/.env.example). To try it without
+# Azure credentials, set MOCK_DATA=true in that file.
+#
+#   docker compose up --build
+#   → frontend at http://localhost:3000  (proxies /api to the backend)
+#   → backend  at http://localhost:3001
+
+services:
+  backend:
+    build: ./backend
+    env_file:
+      - backend/.env
+    ports:
+      - '3001:3001'
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - '3000:80'
+    depends_on:
+      - backend
+    restart: unless-stopped

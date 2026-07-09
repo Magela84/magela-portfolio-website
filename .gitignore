@@ -4,3 +4,16 @@ Thumbs.db
 
 # Local preview tooling (session-specific)
 .claude/
+
+# Node / build output (from bundled app projects)
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+build/
+*.log
+
+# Secrets — never commit real env files (keep .env.example)
+.env
+**/.env
+!**/.env.example

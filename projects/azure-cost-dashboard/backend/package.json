@@ -1,0 +1,24 @@
+{
+  "name": "azure-cost-dashboard-backend",
+  "version": "0.1.0",
+  "description": "Express backend for the Azure Cost Visibility Dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.109.1",
+    "@azure/arm-compute": "^24.1.0",
+    "@azure/arm-consumption": "^9.2.0",
+    "@azure/arm-costmanagement": "1.0.0-beta.1",
+    "@azure/arm-logic": "^8.2.0",
+    "@azure/arm-monitor": "^7.0.0",
+    "@azure/arm-network": "^36.0.0",
+    "@azure/identity": "^4.13.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
