@@ -999,8 +999,8 @@
       Open to remote and top-tier cloud engineering roles. Have an infrastructure challenge or a
       team that needs a hand? I'd love to hear about it.
     </p>
-    <!-- Formspree: replace YOUR_FORM_ID with the ID from your Formspree dashboard -->
-    <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <!-- Formspree endpoint -->
+    <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/xzdlnwvj" method="POST">
       <div class="form-row">
         <div class="field">
           <label for="name">Name</label>
@@ -1080,11 +1080,6 @@
   const status = document.getElementById('formStatus');
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    if (form.action.includes('YOUR_FORM_ID')) {
-      status.className = 'form-status err';
-      status.textContent = 'Form not configured yet — add your Formspree ID.';
-      return;
-    }
     status.className = 'form-status';
     status.textContent = 'Sending…';
     try {
