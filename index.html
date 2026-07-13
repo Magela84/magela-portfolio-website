@@ -428,6 +428,7 @@
     letter-spacing: -0.01em;
     margin-bottom: 8px;
   }
+  .project-meta { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
   .project-body p.desc { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 18px; flex: 1; }
 
   .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
@@ -781,7 +782,8 @@
     <h2 class="section-title reveal">Selected Azure builds</h2>
     <p class="section-lead reveal">
       A sample of infrastructure I've designed and automated with Bicep, Terraform, and GitHub Actions.
-      Each links to real, deployable code — part of a broader portfolio of hands-on Azure projects.
+      Real, client-scenario Azure builds — each with business context, clean Infrastructure as Code,
+      and its own version-controlled repo. Part of a growing portfolio of hands-on work.
     </p>
 
     <div class="projects-grid">
@@ -838,21 +840,24 @@
           </svg>
         </div>
         <div class="project-body">
-          <h3>Private-Only Networking</h3>
+          <h3>Azure Landing Zone</h3>
+          <p class="project-meta">Meridian Logistics · Cloud Migration</p>
           <p class="desc">
-            Lock data services down to private-only access: disable public network access on Storage
-            and Key Vault, add Private Endpoints with private IPs inside the VNet, and wire up Private
-            DNS so name resolution stays internal.
+            A repeatable, policy-compliant landing zone for a logistics firm migrating three on-prem
+            apps to Azure. Hub-and-spoke VNet via modular Terraform, Azure SQL + Storage via Bicep,
+            remote Terraform state with locking, and a managed PostgreSQL Flexible Server — 100% IaC,
+            zero manual portal config.
           </p>
           <div class="badges">
-            <span class="badge">Azure VNet</span>
-            <span class="badge">Private Endpoints</span>
-            <span class="badge">Private DNS</span>
+            <span class="badge">Terraform</span>
             <span class="badge">Bicep</span>
+            <span class="badge">ARM</span>
+            <span class="badge">Hub-Spoke VNet</span>
+            <span class="badge">PostgreSQL</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/Magela84/magela-portfolio-website/tree/main/projects/azure-private-endpoints" target="_blank" rel="noopener">⌥ GitHub</a>
-            <a href="https://github.com/Magela84/magela-portfolio-website/blob/main/projects/azure-private-endpoints/README.md" target="_blank" rel="noopener">↗ Details</a>
+            <a href="https://github.com/Magela84/-meridian-logistics-azure-landing-zone" target="_blank" rel="noopener">⌥ GitHub</a>
+            <a href="https://github.com/Magela84/-meridian-logistics-azure-landing-zone#readme" target="_blank" rel="noopener">↗ Details</a>
           </div>
         </div>
       </article>
@@ -871,21 +876,25 @@
           </svg>
         </div>
         <div class="project-body">
-          <h3>CI/CD Pipeline for Infrastructure</h3>
+          <h3>Zero-Trust Security Baseline</h3>
+          <p class="project-meta">Harborview Financial · SOC 2 Type II</p>
           <p class="desc">
-            Automated IaC delivery with GitHub Actions: every push and PR compiles Bicep and validates
-            Terraform, so broken templates fail before they ever reach Azure — plus an approval-gated
-            deployment workflow for safe releases.
+            A hardened zero-trust baseline for a regulated financial institution preparing for a
+            SOC 2 Type II audit. Default-deny NSGs, hardcoded credentials replaced with Key Vault via
+            a User-Assigned Managed Identity, least-privilege RBAC, and segmented private-endpoint
+            networking with a full audit trail.
           </p>
           <div class="badges">
-            <span class="badge">GitHub Actions</span>
-            <span class="badge">Bicep</span>
-            <span class="badge">Terraform</span>
-            <span class="badge">Azure CLI</span>
+            <span class="badge">Entra ID</span>
+            <span class="badge">RBAC</span>
+            <span class="badge">Key Vault</span>
+            <span class="badge">Managed Identity</span>
+            <span class="badge">NSGs</span>
+            <span class="badge">Private Endpoints</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/Magela84/magela-portfolio-website/tree/main/projects/azure-devops-cicd" target="_blank" rel="noopener">⌥ GitHub</a>
-            <a href="https://github.com/Magela84/magela-portfolio-website/blob/main/projects/azure-devops-cicd/README.md" target="_blank" rel="noopener">↗ Details</a>
+            <a href="https://github.com/Magela84/harborview-zero-trust-security" target="_blank" rel="noopener">⌥ GitHub</a>
+            <a href="https://github.com/Magela84/harborview-zero-trust-security#readme" target="_blank" rel="noopener">↗ Details</a>
           </div>
         </div>
       </article>
@@ -904,29 +913,35 @@
           </svg>
         </div>
         <div class="project-body">
-          <h3>Secure Baseline Infrastructure</h3>
+          <h3>Containerized CI/CD Pipeline</h3>
+          <p class="project-meta">NovaByte Software · SaaS Modernization</p>
           <p class="desc">
-            The same hardened baseline — VNet + NSG, TLS-1.2 HTTPS-only Storage, and an RBAC Key Vault
-            — deployed twice, once in Bicep and once in Terraform, with idempotency checks and
-            root-cause drift analysis.
+            Replaced a 2–3 hour manual SSH deploy with a four-stage GitHub Actions pipeline for a SaaS
+            startup. Multi-stage Docker build, ACR pulls via Managed Identity (no stored creds), Azure
+            Container Apps with scale-to-zero, and Log Analytics monitoring — live at a public HTTPS URL.
           </p>
           <div class="badges">
-            <span class="badge">Bicep</span>
-            <span class="badge">Terraform</span>
-            <span class="badge">Azure VNet</span>
-            <span class="badge">Key Vault</span>
+            <span class="badge">Docker</span>
+            <span class="badge">Azure Container Apps</span>
+            <span class="badge">ACR</span>
+            <span class="badge">GitHub Actions</span>
+            <span class="badge">Managed Identity</span>
+            <span class="badge">Log Analytics</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/Magela84/magela-portfolio-website/tree/main/projects/azure-iac-secure-baseline" target="_blank" rel="noopener">⌥ GitHub</a>
-            <a href="https://github.com/Magela84/magela-portfolio-website/blob/main/projects/azure-iac-secure-baseline/README.md" target="_blank" rel="noopener">↗ Details</a>
+            <a href="https://github.com/Magela84/novabyte-containerized-cicd-pipeline" target="_blank" rel="noopener">⌥ GitHub</a>
+            <a href="https://github.com/Magela84/novabyte-containerized-cicd-pipeline#readme" target="_blank" rel="noopener">↗ Details</a>
           </div>
         </div>
       </article>
 
     </div>
 
-    <div class="reveal" style="text-align:center;margin-top:40px;">
-      <a href="https://github.com/Magela84/magela-portfolio-website/tree/main/projects" target="_blank" rel="noopener" class="btn btn-ghost">View all 11 projects on GitHub →</a>
+    <p class="reveal" style="text-align:center;color:var(--text-faint);font-family:var(--mono);font-size:0.8rem;margin-top:36px;">
+      In progress: AKS platform migration (PulseHealth) · Observability &amp; FinOps (Crestwood) · Incident-response capstone (Ironclad)
+    </p>
+    <div class="reveal" style="text-align:center;margin-top:20px;">
+      <a href="https://github.com/Magela84?tab=repositories" target="_blank" rel="noopener" class="btn btn-ghost">View all projects on GitHub →</a>
     </div>
   </div>
 </section>
