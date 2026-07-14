@@ -599,6 +599,39 @@
   .form-status.err { color: #f87171; }
   @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
 
+  /* ---------- Measured Impact ---------- */
+  .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 20px; }
+  .impact-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 24px;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .impact-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+  .impact-card .metric { font-size: 1.6rem; font-weight: 750; color: var(--accent); letter-spacing: -0.02em; margin-bottom: 8px; }
+  .impact-card p { color: var(--text-dim); font-size: 0.9rem; }
+
+  /* ---------- Managed Services ---------- */
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .service-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+  .service-card .service-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+  .service-card h3 { font-size: 1.02rem; font-weight: 650; }
+  .service-card .freq {
+    font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--warm); border: 1px solid var(--warm); border-radius: 999px; padding: 3px 10px; white-space: nowrap;
+  }
+  .service-card p { color: var(--text-dim); font-size: 0.9rem; }
+  .services-note { text-align: center; color: var(--text-faint); font-size: 0.85rem; margin-top: 28px; font-family: var(--mono); }
+
   /* ---------- Footer ---------- */
   footer.foot {
     border-top: 1px solid var(--border);
@@ -671,6 +704,7 @@
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
+      <a href="#services">Services</a>
       <a href="#certs">Certifications</a>
       <a href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
       <a href="#contact" class="cta">Get in touch</a>
@@ -710,9 +744,9 @@
         </a>
       </div>
       <div class="hero-stats reveal">
-        <div class="stat"><div class="num">40%</div><div class="lbl">faster deployments</div></div>
-        <div class="stat"><div class="num">~$1K/mo</div><div class="lbl">cloud waste cut</div></div>
-        <div class="stat"><div class="num">35%</div><div class="lbl">faster app response</div></div>
+        <div class="stat"><div class="num">3 yrs</div><div class="lbl">professional Azure</div></div>
+        <div class="stat"><div class="num">6</div><div class="lbl">client engagements</div></div>
+        <div class="stat"><div class="num">40+</div><div class="lbl">resources as IaC</div></div>
       </div>
     </div>
     <div class="hero-photo reveal">
@@ -733,43 +767,82 @@
     <div class="about-grid">
       <div class="reveal">
         <p>
-          I'm an Azure Cloud Engineer backed by <strong>nine years across enterprise IT and cloud
-          engineering</strong>, now focused on designing, deploying, and securing cloud infrastructure.
-          My work sits at the intersection of <strong>Infrastructure as Code</strong>,
-          <strong>automated CI/CD pipelines</strong>, and <strong>container platforms on AKS</strong> —
-          the plumbing that lets product teams move fast.
+          I'm a Cloud Engineer with <strong>3 years of professional Azure experience</strong> at
+          Tek Tariq IT Solutions Limited, combined with a portfolio of <strong>six enterprise client
+          engagements</strong> built entirely as Infrastructure as Code. I operate Azure environments
+          daily — and I build them from scratch.
         </p>
         <p>
-          I treat infrastructure as code by default, obsess over observability and cost, and take a
-          <strong>troubleshooting-first approach</strong> that root-causes failures instead of patching
-          symptoms. Recent wins: cutting deployment time ~40% through automation, and building a scanner
-          that surfaced ~$1K/month in idle-resource waste.
+          In my current role I run <strong>Azure cloud operations</strong> — monitoring, automation, and
+          infrastructure management across Virtual Machines, AKS, App Service, storage, and networking.
+          I build KQL-based monitoring and alert rules, manage on-call incident response, and deliver
+          automation with <strong>PowerShell, Logic Apps, and Azure pipelines</strong>.
         </p>
         <p>
-          I'm currently targeting <strong>remote and top-tier engineering roles</strong> where I can
-          own infrastructure end to end and keep leveling up toward architect-level work.
+          That combination — <strong>operational depth plus architectural capability</strong> — is what
+          this portfolio demonstrates. I'm targeting remote and top-tier cloud engineering roles where I
+          can own infrastructure end to end.
         </p>
       </div>
       <div class="focus-card reveal">
-        <h3>Core focus areas</h3>
+        <h3>What I do daily</h3>
         <ul class="focus-list">
           <li>
-            <span class="ic">🌐</span>
-            <span class="txt"><strong>Networking &amp; Infrastructure</strong><span>VNets, hub-spoke, firewalls, private endpoints</span></span>
+            <span class="ic">🖥️</span>
+            <span class="txt"><strong>Manage VM &amp; AKS fleets</strong><span>Patching, scaling, performance · Azure Monitor</span></span>
+          </li>
+          <li>
+            <span class="ic">📊</span>
+            <span class="txt"><strong>Build KQL monitoring</strong><span>Log Analytics queries, alert rules, workbooks</span></span>
+          </li>
+          <li>
+            <span class="ic">🚨</span>
+            <span class="txt"><strong>On-call incident response</strong><span>Triage, diagnose, remediate · runbooks</span></span>
           </li>
           <li>
             <span class="ic">⚙️</span>
-            <span class="txt"><strong>DevOps &amp; CI/CD</strong><span>Pipelines, GitOps, release automation</span></span>
+            <span class="txt"><strong>Automate operations</strong><span>PowerShell, Logic Apps, Azure pipelines</span></span>
           </li>
           <li>
-            <span class="ic">☸️</span>
-            <span class="txt"><strong>Kubernetes &amp; Containers</strong><span>AKS, Helm, scaling &amp; self-healing</span></span>
+            <span class="ic">🔐</span>
+            <span class="txt"><strong>Governance &amp; security</strong><span>RBAC, Azure Policy, Entra ID, Defender</span></span>
           </li>
           <li>
-            <span class="ic">🗄️</span>
-            <span class="txt"><strong>Data &amp; Storage</strong><span>Blob, SQL, Cosmos DB, backup &amp; DR</span></span>
+            <span class="ic">💰</span>
+            <span class="txt"><strong>Cost optimization</strong><span>FinOps, budget alerts, right-sizing</span></span>
           </li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEASURED IMPACT ============ -->
+<section id="impact">
+  <div class="wrap">
+    <span class="eyebrow reveal">// measured impact</span>
+    <h2 class="section-title reveal">Real outcomes, not theory</h2>
+    <p class="section-lead reveal">Quantified results delivered over 3 years at Tek Tariq IT Solutions Limited.</p>
+    <div class="impact-grid">
+      <div class="impact-card reveal">
+        <div class="metric">$1K/yr saved</div>
+        <p>Azure spend cut through VM right-sizing, resource cleanup, and automated start/stop schedules.</p>
+      </div>
+      <div class="impact-card reveal">
+        <div class="metric">10–15 hrs/wk</div>
+        <p>Reclaimed by automating VM scheduling and backup verification with PowerShell, Logic Apps, and pipelines.</p>
+      </div>
+      <div class="impact-card reveal">
+        <div class="metric">2–3 hrs → &lt;5 min</div>
+        <p>Deployment time for a SaaS client after replacing a manual SSH process with a four-stage CI/CD pipeline.</p>
+      </div>
+      <div class="impact-card reveal">
+        <div class="metric">40+ resources</div>
+        <p>Deployed exclusively as Infrastructure as Code across three client engagements — zero portal clicks.</p>
+      </div>
+      <div class="impact-card reveal">
+        <div class="metric">Live cost data</div>
+        <p>Built a Cost Visibility Dashboard giving management real-time spend by resource group, tag, and environment.</p>
       </div>
     </div>
   </div>
@@ -988,7 +1061,68 @@
           <span>Liveness/Readiness Probes</span><span>Resource Requests &amp; Limits</span>
         </div>
       </div>
+
+      <div class="skill-cat reveal">
+        <div class="head"><span class="ic">📊</span><h3>Monitoring &amp; Operations</h3></div>
+        <div class="skill-tags">
+          <span>Azure Monitor</span><span>Log Analytics</span><span>KQL</span>
+          <span>Workbooks</span><span>Logic Apps</span><span>Azure Automation</span>
+          <span>Cost Management</span><span>FinOps</span><span>Azure Backup</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal">
+        <div class="head"><span class="ic">🔐</span><h3>Security &amp; Identity</h3></div>
+        <div class="skill-tags">
+          <span>Entra ID</span><span>RBAC</span><span>Managed Identities</span>
+          <span>Key Vault</span><span>Private Endpoints</span><span>NSGs</span>
+          <span>Azure Policy</span><span>Azure Defender</span>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ MANAGED SERVICES ============ -->
+<section id="services">
+  <div class="wrap">
+    <span class="eyebrow reveal">// managed services</span>
+    <h2 class="section-title reveal">Managed Azure cloud services</h2>
+    <p class="section-lead reveal">
+      Backed by 3 years of professional Azure operations plus the client engagements above, I offer
+      structured managed services — provisioning, monitoring, and optimizing Azure environments end to end.
+    </p>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-head"><h3>Infrastructure Management</h3><span class="freq">Ongoing</span></div>
+        <p>VMs, AKS, App Service, networking, and storage — provisioned, monitored, and maintained.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-head"><h3>Monitoring &amp; Alerting</h3><span class="freq">24/7</span></div>
+        <p>Azure Monitor, KQL dashboards, alert rules, and on-call incident response.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-head"><h3>Cost Governance</h3><span class="freq">Monthly</span></div>
+        <p>VM right-sizing, cost-visibility dashboards, budget alerts, and FinOps reporting.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-head"><h3>Automation</h3><span class="freq">As needed</span></div>
+        <p>PowerShell, Logic Apps, and pipeline automation — custom to each client's workflows.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-head"><h3>Security Operations</h3><span class="freq">Ongoing</span></div>
+        <p>NSG review, RBAC audit, Key Vault management, and Azure Policy compliance.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-head"><h3>IaC Management</h3><span class="freq">Every change</span></div>
+        <p>All changes via Terraform &amp; Bicep, with pull-request review and approval.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-head"><h3>Monthly Reporting</h3><span class="freq">Monthly</span></div>
+        <p>Uptime, cost, security posture, incident summary, and forward recommendations.</p>
+      </div>
+    </div>
+    <p class="services-note reveal">Managed Services Proposal &amp; SLA templates available on request.</p>
   </div>
 </section>
 
